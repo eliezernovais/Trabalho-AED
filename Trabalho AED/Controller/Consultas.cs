@@ -74,7 +74,7 @@ namespace Controller
 
                 // se não encontrou, avisa e repete
                 if (disciplinaEncontrada == null)
-                    Console.WriteLine("✘ Disciplina não encontrada. Tente novamente.\n");
+                    Console.WriteLine("Disciplina não encontrada. Tente novamente.\n");
             }
 
             Console.Clear();
@@ -95,7 +95,7 @@ namespace Controller
 
                     // calcula média e situação
                     float media = (m.Nota1 + m.Nota2) / 2;
-                    string situacao = media >= disciplinaEncontrada.NotaMinima ? "APROVADO ✔" : "REPROVADO ✘";
+                    string situacao = media >= disciplinaEncontrada.NotaMinima ? "APROVADO" : "REPROVADO";
 
                     Console.WriteLine($"Nome: {alunoEncontrado?.Nome} | Nota1: {m.Nota1} | Nota2: {m.Nota2} | Média: {media:F1} | {situacao}");
                     temAluno = true;
@@ -136,7 +136,7 @@ namespace Controller
 
                 // se não encontrou, avisa e repete
                 if (alunoEncontrado == null)
-                    Console.WriteLine("✘ Aluno não encontrado. Tente novamente.\n");
+                    Console.WriteLine("Aluno não encontrado. Tente novamente.\n");
             }
 
             Console.Clear();
@@ -157,7 +157,7 @@ namespace Controller
 
                     // calcula média e situação
                     float media = (m.Nota1 + m.Nota2) / 2;
-                    string situacao = media >= disciplina?.NotaMinima ? "APROVADO ✔" : "REPROVADO ✘";
+                    string situacao = media >= disciplina?.NotaMinima ? "APROVADO" : "REPROVADO";
 
                     Console.WriteLine($"Disciplina: {disciplina?.Nome} | Nota1: {m.Nota1} | Nota2: {m.Nota2} | Média: {media:F1} | {situacao}");
                     temDisciplina = true;

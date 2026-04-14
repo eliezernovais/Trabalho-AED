@@ -115,7 +115,7 @@ namespace Controller
                 }
 
                 if (alunoEncontrado == null)
-                    Console.WriteLine("✘ Aluno não encontrado. Tente novamente.\n");
+                    Console.WriteLine("Aluno não encontrado. Tente novamente.\n");
             }
 
             // Procura a disciplina pelo nome ou código até encontrar uma válida
@@ -136,7 +136,7 @@ namespace Controller
                 }
 
                 if (disciplinaEncontrada == null)
-                    Console.WriteLine("✘ Disciplina não encontrada. Tente novamente.\n");
+                    Console.WriteLine("Disciplina não encontrada. Tente novamente.\n");
             }
 
             // Verifica se o aluno já está matriculado nessa disciplina
@@ -146,7 +146,7 @@ namespace Controller
                     m.MatriculaAluno == alunoEncontrado.Matricula &&
                     m.CodDisciplina == disciplinaEncontrada.CodDisciplina)
                 {
-                    Console.WriteLine("\n✘ Esse aluno já está matriculado nessa disciplina.");
+                    Console.WriteLine("\nEsse aluno já está matriculado nessa disciplina.");
                     Console.WriteLine("\nAperte 'Enter' para retornar ao menu anterior");
                     Console.ReadLine();
                     return;
@@ -189,7 +189,7 @@ namespace Controller
                 }
 
                 if (alunoEncontrado == null)
-                    Console.WriteLine("✘ Aluno não encontrado. Tente novamente.\n");
+                    Console.WriteLine("Aluno não encontrado. Tente novamente.\n");
             }
 
             // Procura a disciplina até encontrar uma válida
@@ -210,7 +210,7 @@ namespace Controller
                 }
 
                 if (disciplinaEncontrada == null)
-                    Console.WriteLine("✘ Disciplina não encontrada. Tente novamente.\n");
+                    Console.WriteLine("Disciplina não encontrada. Tente novamente.\n");
             }
 
             // Busca a matrícula correspondente ao aluno e à disciplina
@@ -227,7 +227,7 @@ namespace Controller
             // Se não houver matrícula, não é possível lançar nota
             if (matriculaEncontrada == null)
             {
-                Console.WriteLine("\n✘ O aluno não está matriculado nessa disciplina.");
+                Console.WriteLine("\nO aluno não está matriculado nessa disciplina.");
                 Console.WriteLine("\nAperte 'Enter' para retornar ao menu anterior");
                 Console.ReadLine();
                 return;

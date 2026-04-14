@@ -1,11 +1,12 @@
 ﻿using System.Security.Cryptography.X509Certificates;
+using Controller;
 
 namespace Menu
 {
-
-    class Menus
+    
+    public class Menus
     {
-        private bool VerificarEscolha(string entrada, int primeiroNumero, int segundoNumero)
+        private static bool VerificarEscolha(string entrada, int primeiroNumero, int segundoNumero)
         {
             bool verificado = false;
             bool isInteger = int.TryParse(entrada, out int escolha);
@@ -18,7 +19,7 @@ namespace Menu
                 return false;
             }
         }
-        public void Menu()
+        public static void Menu()
         {
             bool stopExecution = false;
             while (!stopExecution)
@@ -43,77 +44,109 @@ namespace Menu
                     ok = VerificarEscolha(entrada, 0, 3);
                 }
                 escolha = int.Parse(entrada);
-                while (ok)
-                {
-                    switch (escolha)
-                    {
-                        case 0:
-                            stopExecution = true;
-                            break;
-                        case 1:
-                            Consulta();
-                            break;
-                        case 2:
-                            Cadastro();
-                            break;
-                        case 3:
-                            Salvar();
-                            break;
-                    }
-                }
-            }
-        }
-        private void Consulta()
-        {
-            Console.WriteLine("MENU - CONSULTA\n" +
-                "1-Listar Alunos\n" +
-                "2- Listar Disciplinas\n" +
-                "3- Listar Alunos de Uma Disciplina\n" +
-                "4- Listar Disciplinas de um Aluno" +
-                "0- Voltar ao Menu");
-            string entrada = Console.ReadLine();
-            int escolha;
-            bool ok = VerificarEscolha(entrada, 0, 3);
-            while (!ok)
-            {
-                Console.WriteLine("MENU - CONSULTA\n" +
-                "1-Listar Alunos\n" +
-                "2- Listar Disciplinas\n" +
-                "3- Listar Alunos de Uma Disciplina\n" +
-                "4- Listar Disciplinas de um Aluno" +
-                "0- Voltar ao Menu\n" +
-                "INSIRA UM VALOR VALIDO!");
-                entrada = Console.ReadLine();
-                ok = VerificarEscolha(entrada, 0, 3);
-            }
-            escolha = int.Parse(entrada);
-            while (ok)
-            {
                 switch (escolha)
                 {
                     case 0:
+                        MainController.Sair();
+                        stopExecution = true;
                         break;
                     case 1:
+                        Consulta();
                         break;
                     case 2:
+                        Cadastro();
                         break;
                     case 3:
+                        MainController.Salvar();
                         break;
                 }
-                break;
             }
         }
-        private void Cadastro()
+        private static void Consulta()
         {
-
+            Console.WriteLine("MENU - CONSULTA\n" +
+                "1- Listar Alunos\n" +
+                "2- Listar Disciplinas\n" +
+                "3- Listar Alunos de Uma Disciplina\n" +
+                "4- Listar Disciplinas de um Aluno\n" +
+                "0- Voltar ao Menu");
+            string entrada = Console.ReadLine();
+            int escolha;
+            bool ok = VerificarEscolha(entrada, 0, 4);
+            while (!ok)
+            {
+                Console.WriteLine("MENU - CONSULTA\n" +
+                "1- Listar Alunos\n" +
+                "2- Listar Disciplinas\n" +
+                "3- Listar Alunos de Uma Disciplina\n" +
+                "4- Listar Disciplinas de um Aluno\n" +
+                "0- Voltar ao Menu\n" +
+                "INSIRA UM VALOR VALIDO!");
+                entrada = Console.ReadLine();
+                ok = VerificarEscolha(entrada, 0, 4);
+            }
+            escolha = int.Parse(entrada);
+            switch (escolha)
+            {
+                case 0:
+                    MainController.Sair();
+                    break;
+                case 1:
+                    Consultas.ListarAlunos();
+                    break;
+                case 2:
+                    Consultas.ListarDisciplinas();
+                    break;
+                case 3:
+                    Consultas.ListarAlunosdeDisciplina();
+                    break;
+                case 4:
+                    Consultas.ListarDisciplinasdeAluno();
+                    break;
+            }
         }
-        private void Salvar()
+        private static void Cadastro()
         {
-
-        }
-        private void Sair()
-        {
-
+            Console.WriteLine("MENU - CADASTRO\n" +
+                "1- Cadastrar Alunos\n" +
+                "2- Cadastrar Disciplinas\n" +
+                "3- Cadastrar Matriculas\n" +
+                "4- Cadastrar Notas de Alunos\n" +
+                "0- Voltar ao Menu");
+            string entrada = Console.ReadLine();
+            int escolha;
+            bool ok = VerificarEscolha(entrada, 0, 4);
+            while (!ok)
+            {
+                Console.WriteLine("MENU - CADASTRO\n" +
+                "1- Cadastrar Alunos\n" +
+                "2- Cadastrar Disciplinas\n" +
+                "3- Cadastrar Matriculas\n" +
+                "4- Cadastrar Notas de Alunos\n" +
+                "0- Voltar ao Menu\n" +
+                "INSIRA UM VALOR VALIDO!");
+                entrada = Console.ReadLine();
+                ok = VerificarEscolha(entrada, 0, 4);
+            }
+            escolha = int.Parse(entrada);
+            switch (escolha)
+            {
+                case 0:
+                    MainController.Sair();
+                    break;
+                case 1:
+                    Cadastros.CadastrarDisciplinas();
+                    break;
+                case 2:
+                    Cadastros.CadastrarAlunos();
+                    break;
+                case 3:
+                    Cadastros.CadastrarMatriculas();
+                    break;
+                case 4:
+                    Cadastros.CadastrarNotaDeAlunos();
+                    break;
+            }
         }
     }
 }

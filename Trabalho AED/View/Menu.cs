@@ -8,7 +8,6 @@ namespace Menu
     {
         private static bool VerificarEscolha(string entrada, int primeiroNumero, int segundoNumero)
         {
-            bool verificado = false;
             bool isInteger = int.TryParse(entrada, out int escolha);
             if (isInteger == true && (escolha >= primeiroNumero && escolha <= segundoNumero))
             {
@@ -51,7 +50,7 @@ namespace Menu
                 switch (escolha)
                 {
                     case 0:
-                        MainController.Sair();
+                        FileManager.SalvarArquivos();
                         stopExecution = true;
                         break;
                     case 1:
@@ -61,7 +60,10 @@ namespace Menu
                         Cadastro();
                         break;
                     case 3:
-                        MainController.Salvar();
+                        FileManager.SalvarArquivos();
+                        Console.Clear();
+                        Console.WriteLine("Arquivos Salvos! Aperte 'Enter' para continuar!");
+                        Console.ReadLine();
                         break;
                 }
             }
@@ -95,7 +97,6 @@ namespace Menu
             switch (escolha)
             {
                 case 0:
-                    MainController.Sair();
                     break;
                 case 1:
                     Consultas.ListarAlunos();
@@ -140,7 +141,6 @@ namespace Menu
             switch (escolha)
             {
                 case 0:
-                    MainController.Sair();
                     break;
                 case 1:
                     Cadastros.CadastrarDisciplinas();

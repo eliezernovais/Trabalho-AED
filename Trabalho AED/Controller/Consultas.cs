@@ -9,7 +9,18 @@ namespace Controller
     {
         public static void ListarAlunos()
         {
-            Dados.Defin
+            Console.Clear();
+            int contador = 0;
+            foreach(Alunos aluno in Dados.DataBase.GetAlunos())
+            {
+                if(aluno != null)
+                {
+                    Console.WriteLine($"{contador + 1} - {aluno.Nome}");
+                    contador++;
+                }
+            }
+            Console.WriteLine("Aperte 'Enter' para retornar ao menu Anterior");
+            Console.ReadLine();
         }
         public static void ListarDisciplinas()
         {

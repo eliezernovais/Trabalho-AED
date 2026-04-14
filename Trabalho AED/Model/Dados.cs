@@ -6,31 +6,54 @@ namespace Model
 {
     public static class Dados
     {
-        private static int maximoAlunos = 100; // base 100
-        private static int maximoDisciplina = 100; // base 100
-
-        private static Alunos[] alunos = new Alunos[maximoAlunos];
-        private static Disciplina[] disciplinas = new Disciplina[maximoDisciplina];
-        private static Matricula[] matriculas = new Matricula[maximoAlunos];
-        public static void DefinirMaximoAlunos(int quantidade)
+        private static int MaximoAlunos = 100; // base 100
+        private static int MaximoDisciplina = 100; // base 100
+        public static void DefinirMaximoAlunos(int maximoAlunos)
         {
-            maximoAlunos = quantidade;
+            MaximoAlunos = maximoAlunos;
         }
-        public static void DefinirMaximoDisciplina(int quantidade)
+        public static void DefinirMaximoDisciplina(int maximoDisciplina)
         {
-            maximoDisciplina = quantidade;
+            MaximoDisciplina = maximoDisciplina;
         }
-        public static Alunos[] GetAlunos()
+        public static int GetMaximoAlunos()
         {
-            return alunos;
+            return MaximoAlunos;
         }
-        public static Disciplina[] GetDisciplina()
+        public static int GetMaximoDisciplina()
         {
-            return disciplinas;
+            return MaximoDisciplina;
         }
-        public static Matricula[] GetMatricula()
+        public static class DataBase
         {
-            return matriculas;
+            private static Alunos[] Alunos = new Alunos[MaximoAlunos];
+            private static Disciplina[] Disciplinas = new Disciplina[MaximoDisciplina];
+            private static Matricula[] Matriculas = new Matricula[MaximoAlunos];
+            public static Alunos[] GetAlunos()
+            {
+                return Alunos;
+            }
+            public static void SetAlunos(Alunos[] alunos)
+            {
+                Alunos = alunos;
+            }
+            public static Disciplina[] GetDisciplinas()
+            {
+                return Disciplinas;
+            }
+            public static void SetDisciplinas(Disciplina[] disciplinas)
+            {
+                Disciplinas = disciplinas;
+            }
+            public static Matricula[] GetMatriculas()
+            {
+                return Matriculas;
+            }
+            public static void SetMatriculas(Matricula[] matriculas)
+            {
+                Matriculas = matriculas;
+            }
         }
     }
+
 }

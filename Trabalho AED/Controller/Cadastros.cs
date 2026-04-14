@@ -11,7 +11,6 @@ namespace Controller
         
         public static void CadastrarDisciplinas()
         {
-            Alunos
         }
         public static void CadastrarAlunos()
         {

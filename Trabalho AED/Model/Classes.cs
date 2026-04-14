@@ -23,8 +23,8 @@ namespace Model
     {
         public int CodDisciplina { get; set; }
         public string Nome { get; set; }
-        public int NotaMinima { get; set; }
-        public Disciplina(int codDisciplina,string nome,int notaMinima)
+        public float NotaMinima { get; set; }
+        public Disciplina(int codDisciplina,string nome,float notaMinima)
         {
             CodDisciplina = codDisciplina;
             Nome = nome;

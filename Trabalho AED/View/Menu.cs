@@ -2,7 +2,7 @@
 
 namespace Menu
 {
-    
+
     class Menus
     {
         private bool VerificarEscolha(string entrada, int primeiroNumero, int segundoNumero)

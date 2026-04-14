@@ -143,10 +143,10 @@ namespace Menu
                 case 0:
                     break;
                 case 1:
-                    Cadastros.CadastrarDisciplinas();
+                    Cadastros.CadastrarAlunos();
                     break;
                 case 2:
-                    Cadastros.CadastrarAlunos();
+                    Cadastros.CadastrarDisciplinas();
                     break;
                 case 3:
                     Cadastros.CadastrarMatriculas();

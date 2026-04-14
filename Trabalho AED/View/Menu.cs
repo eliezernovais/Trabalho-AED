@@ -24,6 +24,7 @@ namespace Menu
             bool stopExecution = false;
             while (!stopExecution)
             {
+                Console.Clear();
                 Console.WriteLine("MENU\n" +
                     "1- Consulta\n" +
                     "2- Cadastro\n" +
@@ -34,6 +35,7 @@ namespace Menu
                 bool ok = VerificarEscolha(entrada, 0, 3);
                 while (!ok)
                 {
+                    Console.Clear();
                     Console.WriteLine("MENU\n" +
                         "1- Consulta\n" +
                         "2- Cadastro\n" +
@@ -64,6 +66,7 @@ namespace Menu
         }
         private static void Consulta()
         {
+            Console.Clear();
             Console.WriteLine("MENU - CONSULTA\n" +
                 "1- Listar Alunos\n" +
                 "2- Listar Disciplinas\n" +
@@ -75,6 +78,7 @@ namespace Menu
             bool ok = VerificarEscolha(entrada, 0, 4);
             while (!ok)
             {
+                Console.Clear();
                 Console.WriteLine("MENU - CONSULTA\n" +
                 "1- Listar Alunos\n" +
                 "2- Listar Disciplinas\n" +
@@ -107,6 +111,7 @@ namespace Menu
         }
         private static void Cadastro()
         {
+            Console.Clear();
             Console.WriteLine("MENU - CADASTRO\n" +
                 "1- Cadastrar Alunos\n" +
                 "2- Cadastrar Disciplinas\n" +
@@ -118,6 +123,7 @@ namespace Menu
             bool ok = VerificarEscolha(entrada, 0, 4);
             while (!ok)
             {
+                Console.Clear();
                 Console.WriteLine("MENU - CADASTRO\n" +
                 "1- Cadastrar Alunos\n" +
                 "2- Cadastrar Disciplinas\n" +

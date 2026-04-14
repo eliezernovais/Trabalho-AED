@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Classes
+namespace Model
 {
-    class Matricula
+    public class Matricula
     {
 
         public int MatriculaAluno { get; set; }
@@ -19,7 +19,7 @@ namespace Classes
             Nota2 = nota2;
         }
     }
-    class Disciplina
+    public class Disciplina
     {
         public int CodDisciplina { get; set; }
         public string Nome { get; set; }
@@ -32,7 +32,7 @@ namespace Classes
         }
 
     }
-    class Alunos
+    public class Alunos
     {
         public int Matricula { get; set; }
         public string Nome { get; set; }

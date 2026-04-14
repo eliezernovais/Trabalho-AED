@@ -21,6 +21,8 @@ namespace Menu
         }
         public static void Menu()
         {
+            FileManager.LerArquivos();
+
             bool stopExecution = false;
             while (!stopExecution)
             {

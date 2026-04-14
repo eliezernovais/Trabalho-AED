@@ -27,11 +27,11 @@ namespace Controller
                     linhaAluno = linha.Split(";");
                     try
                     {
-                        alunosLidos[contador] = new Alunos(int.Parse(linhaAluno[0]), linhaAluno[1], int.Parse(linhaAluno[2]));
-                        contador++;
+                        Dados.DataBase.AdicionarAluno(int.Parse(linhaAluno[0]), linhaAluno[1], int.Parse(linhaAluno[2]));
                     }
-                    catch { }
+                    catch { };
                 }
+                Dados.SetUltimoAlunoRegistrado(contador);
             }
             contador = 0;
             if (File.Exists(caminhoDisciplinas))
@@ -41,8 +41,7 @@ namespace Controller
                     linhaDisciplina = linha.Split(";");
                     try
                     {
-                        disciplinasLidas[contador] = new Disciplina(int.Parse(linhaDisciplina[0]), linhaDisciplina[1], float.Parse(linhaDisciplina[2]));
-                        contador++;
+                        Dados.DataBase.AdicionarDisciplina(int.Parse(linhaDisciplina[0]), linhaDisciplina[1], float.Parse(linhaDisciplina[2]));
                     }
                     catch { }
                 }
@@ -55,16 +54,13 @@ namespace Controller
                     linhaMatricula = linha.Split(";");
                     try
                     {
-                        matriculasLidas[contador] = new Matricula(int.Parse(linhaMatricula[0]), int.Parse(linhaMatricula[1]), float.Parse(linhaMatricula[2]), float.Parse(linhaMatricula[3]));
-                        contador++;
+                        Dados.DataBase.AdicionarMatricula(int.Parse(linhaMatricula[0]), int.Parse(linhaMatricula[1]), float.Parse(linhaMatricula[2]), float.Parse(linhaMatricula[3]));
                     }
                     catch { }
                 }
+                Dados.SetUltimaMatriculaRegistrada(contador);
             }
             contador = 0;
-            Dados.DataBase.SetAlunos(alunosLidos);
-            Dados.DataBase.SetDisciplinas(disciplinasLidas);
-            Dados.DataBase.SetMatriculas(matriculasLidas);
             //alunos[0] = new Alunos { Matricula = 0, Nome = "exemplo", Idade = 0 };
         }
         public static void SalvarArquivos()
